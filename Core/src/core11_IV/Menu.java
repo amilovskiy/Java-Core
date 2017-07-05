@@ -66,7 +66,6 @@ public class Menu {
 		
 		System.out.println("Use inverse sorting order ?");
 		System.out.println("yes OR no");
-		
 		inverseSortingChoice = sc2.nextLine();
 		
 		if (inverseSortingChoice.equals("yes"))
