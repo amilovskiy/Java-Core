@@ -7,16 +7,21 @@ public class Main {
 	public static void main(String[] args) {
 		
 		int tmp;
-		String name, changeName;
-		int price, changePrice;
-		String producer, changeProducer;
-		boolean exit = false;
+		String name; 
+		String changeName;
+		int price;
+		int changePrice;
+		String producer;
+		String changeProducer;
+		boolean exit;
 		
 		Menu menu = new Menu();
 		menu.createCollection();
 		
 		Scanner sc = new Scanner(System.in);
 		Scanner sc2 = new Scanner(System.in);
+		
+		exit = false;
 		
 		while (!exit) {
 			System.out.println("1. Add Commodity; ");
@@ -31,8 +36,10 @@ public class Main {
 				case 1:
 					System.out.println("Enter name: ");
 					name = sc2.nextLine();
+					
 					System.out.println("Enter price: ");
 					price = sc.nextInt();
+					
 					System.out.println("Enter producer: ");
 					producer = sc2.nextLine();
 					
@@ -49,6 +56,7 @@ public class Main {
 				case 3:
 					System.out.println("Enter previous name: ");
 					name = sc2.nextLine();
+					
 					System.out.println("Change name: ");
 					changeName = sc2.nextLine();
 

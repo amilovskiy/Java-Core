@@ -61,6 +61,7 @@ public class Menu {
 		
 		Scanner sc = new Scanner(System.in);
 		Scanner sc2 = new Scanner(System.in);
+		
 		tmp = sc.nextInt();
 		
 		System.out.println("Use inverse sorting order ?");
