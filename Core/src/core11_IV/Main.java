@@ -42,39 +42,23 @@ public class Main {
 				case 2:
 					System.out.println("Enter name: ");
 					name = sc2.nextLine();
-					System.out.println("Enter price: // OR '0' ");
-					price = sc.nextInt();
-					System.out.println("Enter producer: // OR '-' ");
-					producer = sc2.nextLine();
-					
-					if (price == 0 && producer.equals("-"))
-						menu.removeFromCollection(name);
-					else if (producer.equals("-"))
-						menu.removeFromCollection(name, price);
-					else
-						menu.removeFromCollection(name, price, producer);
+
+					menu.removeFromCollection(name);
 					break;
 					
 				case 3:
-					System.out.println("Enter name: ");
+					System.out.println("Enter previous name: ");
 					name = sc2.nextLine();
 					System.out.println("Change name: ");
 					changeName = sc2.nextLine();
-					System.out.println("Enter price: ");
-					price = sc.nextInt();
-					System.out.println("Change price: // OR '0' ");
+
+					System.out.println("Change price: ");
 					changePrice = sc.nextInt();
-					System.out.println("Enter producer: ");
-					producer = sc2.nextLine();
-					System.out.println("Change producer: // OR '-' ");
+					
+					System.out.println("Change producer: ");
 					changeProducer = sc2.nextLine();
 					
-					if (changePrice == 0 && changeProducer.equals("-"))
-						menu.setCommodityFromCollection(name, changeName);
-					else if (changeProducer.equals("-"))
-						menu.setCommodityFromCollection(name, changeName, price, changePrice);
-					else
-						menu.setCommodityFromCollection(name, changeName, price, changePrice, producer, changeProducer);
+					menu.setCommodityFromCollection(name, changeName, changePrice, changeProducer);
 					break;
 				
 				case 4:

@@ -30,51 +30,20 @@ public class Menu {
 		}
 	}
 	
-	public void removeFromCollection(String name, int price) {
-		for (Iterator<Commodity> iter = list.iterator(); iter.hasNext();) {
-			Commodity c = iter.next();
-			if (c.getName().equals(name) && c.getPrice() == price)
-				iter.remove();
-		}
-	}
-	
-	public void removeFromCollection(String name, int price, String producer) {
-		for (Iterator<Commodity> iter = list.iterator(); iter.hasNext();) {
-			Commodity c = iter.next();
-			if (c.getName().equals(name) && c.getPrice() == price 
-					&& c.getProducer().equals(producer)) {
-				iter.remove();
-			}
-		}
-	}
-	
-	public void setCommodityFromCollection(String name, String changeName) {
+	public void setCommodityFromCollection(String name, String changeName, int changePrice, String changeProducer) {
 		for (Iterator<Commodity> iter = list.iterator(); iter.hasNext();) {
 			Commodity c = iter.next();
 			if (c.getName().equals(name)) {
 				c.setName(changeName);
-			}
-		}
-	}
-	
-	public void setCommodityFromCollection(String name, String changeName, int price, int changePrice) {
-		for (Iterator<Commodity> iter = list.iterator(); iter.hasNext();) {
-			Commodity c = iter.next();
-			if (c.getName().equals(name) && c.getPrice() == price)
-				c.setName(changeName);
-				c.setPrice(changePrice);
-		}
-	}
-	
-	public void setCommodityFromCollection(String name, String changeName, int price, int changePrice, String producer, String changeProducer) {
-		for (Iterator<Commodity> iter = list.iterator(); iter.hasNext();) {
-			Commodity c = iter.next();
-			if (c.getName().equals(name) && c.getPrice() == price 
-					&& c.getProducer().equals(producer)) {
-				c.setName(changeName);
 				c.setPrice(changePrice);
 				c.setProducer(changeProducer);
 			}
+		}
+	}
+	
+	public void rotateCollection(List<Commodity> list) {
+		for (Commodity commodity : list) {
+			System.out.println(commodity);
 		}
 	}
 	
@@ -94,7 +63,7 @@ public class Menu {
 		Scanner sc2 = new Scanner(System.in);
 		tmp = sc.nextInt();
 		
-		System.out.println("Inverse Sorting order ?");
+		System.out.println("Use inverse sorting order ?");
 		System.out.println("yes OR no");
 		
 		inverseSortingChoice = sc2.nextLine();
@@ -106,56 +75,48 @@ public class Menu {
 			case 1:
 				if (inverseSorting) {
 					Collections.sort(list, new InverseDefaultSorting());
-					for (Commodity c : list) {
-						System.out.println(c);
-					}
+					
+					rotateCollection(list);
 				} else {
 					Collections.sort(list, new DefaultSorting());
-					for (Commodity c : list) {
-						System.out.println(c);
-					}
+					
+					rotateCollection(list);
 				}
 				break;
 			
 			case 2:
 				if (inverseSorting) {
 					Collections.sort(list, new InverseSortedByName());
-					for (Commodity c : list) {
-						System.out.println(c);
-					}
+					
+					rotateCollection(list);
 				} else { 
 					Collections.sort(list, new SortedByName());
-					for (Commodity c : list) {
-						System.out.println(c);
-					}
+					
+					rotateCollection(list);
 				}
 				break;
 			
 			case 3:
 				if (inverseSorting) {
 					Collections.sort(list, new InverseSortedByPrice());
-					for (Commodity c : list) {
-						System.out.println(c);
-					}
+					
+					rotateCollection(list);
 				} else { 
 					Collections.sort(list, new SortedByPrice());
-					for (Commodity c : list) {
-						System.out.println(c);
-					}
+					
+					rotateCollection(list);
 				}
 				break;
 				
 			case 4:
 				if (inverseSorting) {
 					Collections.sort(list, new InverseSortedByProducer());
-					for (Commodity c : list) {
-						System.out.println(c);
-					}
+					
+					rotateCollection(list);
 				} else { 
 					Collections.sort(list, new SortedByProducer());
-					for (Commodity c : list) {
-						System.out.println(c);
-					}
+					
+					rotateCollection(list);
 				}
 				break;
 		}
