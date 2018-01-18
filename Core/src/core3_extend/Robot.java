@@ -1,17 +1,24 @@
-package core12_II;
+package core3_extend;
 
-public class Person {
+public class Robot {
 
 	private String name;
 	private int age;
 	
-	public Person(String name, int age) {
+	public Robot() {
+		super();
+	}
+
+	public Robot(String name, int age) {
 		super();
 		this.name = name;
 		this.age = age;
 	}
-
-	public Person() {
+	
+	public void work() {
+		System.out.println("I'm robot RB-3000");
+		System.out.println("My name : " + name);
+		System.out.println("My age : " + age);
 	}
 
 	public String getName() {
@@ -29,11 +36,5 @@ public class Person {
 	public void setAge(int age) {
 		this.age = age;
 	}
-
-	@Override
-	public String toString() {
-		return name + " " + age + " pets : ";
-	}
-	
 	
 }

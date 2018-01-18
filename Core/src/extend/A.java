@@ -3,7 +3,7 @@ package extend;
 public class A {
 
 	A() {
-		super();
+//		super();
 		System.out.println("A");
 	}
 }

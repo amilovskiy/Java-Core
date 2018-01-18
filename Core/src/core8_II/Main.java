@@ -42,7 +42,7 @@ public class Main {
 //		}
 //		
 //		System.out.println("");
-//		System.out.println("Change red body car to electrocar:");
+//		System.out.println("Change red body car to electric car:");
 //		
 //		for (Car c : list) {
 //			Body b = c.getBody();
